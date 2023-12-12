@@ -304,8 +304,12 @@ public class ElementII_DatFileConverter {
                     + "\t\tindexSize = offset - prev\n"
                     + "\tprev = offset\n");
 
+            python.exec("print('Before calculation: indexSize={}, offset={}'.format(indexSize, offset))");
+
             python.exec("count = (indexSize - (22 * 4)) / 2");
-            // This line is where the problem occuring for 15700 file
+
+            python.exec("print('After calculation: count={}'.format(count))");
+            // This line is where the problem occurring for 15700 file
 
             python.exec("dataMatrix = {}");
 
